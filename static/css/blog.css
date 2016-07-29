@@ -5,7 +5,23 @@ body, html{
     font-family: "Raleway";
     color: rgb(40,40,40);
 }
+#wrap {
+  min-height: 100%;
+}
+.fa {
+  margin: 0px 2px;
+  color: #646464;
+}
 
+.fa:hover {
+  color: #6699ff;
+}
+
+.about-me {
+  font-size: small;
+  font-style: italic;
+  text-align: justify;
+}
 
 .navbar-default {
     background-color: rgb(102,153,255);
@@ -38,8 +54,8 @@ body, html{
     color: black;
     background-color: rgb(102,153,255);
     /*border-bottom: 2px solid rgb(102, 153, 255);*/
-
 }
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -47,6 +63,18 @@ body, html{
     background-color: rgb(102,153,255);
     font-weight: bold;
     /*border-bottom: 2px solid rgb(102, 153, 255);*/
+}
+
+.navbar-default .navbar-nav > li > img.mario-img {
+  display: none;
+  margin: 0px auto -4px auto;
+  height: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-default .navbar-nav > li.active > img.mario-img {
+    display: block;
+  }
 }
 
 
