@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
 MARKDOWN_EDITOR_SKIN = 'simple'
 MARKDOWN_EXTENSIONS = ['extra']
@@ -31,6 +33,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 5
 
 # Application definition
 
@@ -43,6 +46,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_markdown',
     'blog',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
