@@ -1,3 +1,22 @@
 {%load django_markdown %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <title>{{ flatpage.title }} | JJ's World</title>
+  {% include "header.html" %}
+  <body>
+    <div id="wrap">
+    {% include "navbar.html" %}
 
+    <div class="container">
+
+		<div class="row">
 {{ flatpage.content }}
+		</div> <!-- /.row -->
+        
+
+    </div><!-- /.container -->
+  </div><!-- /.wrap -->
+  {% include "footer.html" %}
+  </body>
+</html>
