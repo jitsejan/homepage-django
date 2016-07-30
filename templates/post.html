@@ -3,11 +3,11 @@
 
 {% block blog_entries %}
   <div class="post">
-    <h2><a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a></h2>
+    <h2>{{ object.title }}</h2>
+    {{ object.body|markdown }}
     <p class="meta">
       {{ object.created }} |
       Tagged under {{  object.tags.all|join:", " }}
     </p>
-    {{ object.body|markdown }}
   </div>
 {% endblock %}

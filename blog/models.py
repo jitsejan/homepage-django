@@ -62,5 +62,30 @@ class Website(models.Model):
         verbose_name_plural = "Website Entries"
         ordering = ["-created"]
 
+class ProjectQuerySet(models.QuerySet):
+    def published(self):
+        return self.filter(publish=True)
 
+class Project(models.Model):
+    title = models.CharField(max_length=200)
+    description = MarkdownField()
+    slug = models.SlugField(max_length=200, unique=True)
+    image = models.CharField(max_length=300)
+    link = models.CharField(max_length=200)
+    publish = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    objects = ProjectQuerySet.as_manager()
+
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse("project_detail", kwargs={"slug": self.slug})
+  
+    class Meta:
+        verbose_name = "Project Entry"
+        verbose_name_plural = "Project Entries"
+        ordering = ["-created"]
 

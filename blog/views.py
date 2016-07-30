@@ -14,3 +14,7 @@ class BlogDetail(generic.DetailView):
 class WebsiteIndex(generic.ListView):
     queryset = models.Website.objects.published()
     template_name = "website.html"
+    
+class ProjectIndex(generic.ListView):
+    queryset = models.Project.objects.published()
+    template_name = "project.html"

@@ -1,4 +1,12 @@
 {% load staticfiles %}
+{% load mytags %}
+
+{% url 'home_url' as home %}
+{% url 'projects_url' as projects %}
+{% url 'websites_url' as websites %}
+{% url 'about_url' as about %}
+
+
 <div id="top-bar">
 
 <nav class="navbar navbar-default" role="navigation">
@@ -11,26 +19,26 @@
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img class="" src="{% static "images/logo.png" %}" alt="Logo" /></a>
+                        <a class="navbar-brand" href="{{ home }}"><img class="" src="{% static "images/logo.png" %}" alt="Logo" /></a>
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav pull-right">
-                          <li class="active">
-                                <a class="" href="/"><img class="" src="{% static "images/home.gif"%}" alt="Home" /></a>
+                          <li class="{% active request home %}">
+                                <a class="" href="{{ home }}"><img class="" src="{% static "images/home.gif"%}" alt="Home" /></a>
                                 <img class="mario-img" src="{% static "images/Mario_stand_right.GIF" %}" alt="Mario stand right" />
                           </li>
-                          <li class="">
-                                <a class="" href="/projects"><img class="" src="{% static "images/projects.gif" %}" alt="Projects" /></a>
+                          <li class="{% active request projects %}">
+                                <a class="" href="{{ projects }}"><img class="" src="{% static "images/projects.gif" %}" alt="Projects" /></a>
                                 <img class="mario-img" src="{% static "images/Mario_stand_right.GIF" %}" alt="Mario stand right" />
                           </li>
-                          <li class="">
-                                <a class="" href="/websites"><img class="" src="{% static "images/websites.gif" %}" alt="Websites" /></a>
+                          <li class="{% active request websites %}">
+                                <a class="" href="{{ websites }}"><img class="" src="{% static "images/websites.gif" %}" alt="Websites" /></a>
                                 <img class="mario-img" src="{% static "images/Mario_stand_right.GIF" %}" alt="Mario stand right" />
                           </li>
-                          <li class="">
-                                <a class="" href="pages/about"><img class="" src="{% static "images/about.gif" %}" alt="About" /></a>
+                          <li class="{% active request about %}">
+                                <a class="" href="{{ about }}"><img class="" src="{% static "images/about.gif" %}" alt="About" /></a>
                                 <img class="mario-img" src="{% static "images/Mario_stand_right.GIF" %}" alt="Mario stand right" />
                           </li>
                         </ul>

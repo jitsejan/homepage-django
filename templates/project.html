@@ -1,0 +1,27 @@
+{%load django_markdown %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <title>Projects | JJ's World</title>
+  {% include "header.html" %}
+  <body>
+    <div id="wrap">
+    {% include "navbar.html" %}
+    <div class="container">
+        <div class="row">
+        {% block project_list %}
+          {% for project in project_list %}
+          <div class="project col-md-6 col-xs-12">
+            <h2>{{ project.title }}</h2>
+            <img width="200" class="web-img" src="{% static project.image %}"/>
+            {{ project.description|markdown }}
+
+          </div>
+          {% endfor %}
+        {% endblock %}
+	</div> <!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.wrap -->
+  {% include "footer.html" %}
+  </body>
+</html>
