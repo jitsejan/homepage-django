@@ -11,3 +11,4 @@ class EntryAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Entry, EntryAdmin)
 admin.site.register(models.Tag)
+admin.site.register(models.Website)

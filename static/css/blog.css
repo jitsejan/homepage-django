@@ -22,7 +22,11 @@ body, html{
   font-style: italic;
   text-align: justify;
 }
-
+.web-img{
+    vertical-align: text-top;
+    float: right;
+    padding: 5px 0px 15px 15px;
+}
 .navbar-default {
     background-color: rgb(102,153,255);
     border: 0px;

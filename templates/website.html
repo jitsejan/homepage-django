@@ -1,0 +1,27 @@
+{%load django_markdown %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <title>Websites | JJ's World</title>
+  {% include "header.html" %}
+  <body>
+    <div id="wrap">
+    {% include "navbar.html" %}
+    <div class="container">
+        <div class="row">
+        {% block website_list %}
+          {% for website in website_list %}
+          <div class="website col-md-6 col-xs-12">
+            <h2>{{ website.title }}</h2>
+            <img width="200" class="web-img" src="{% static website.image %}"/>
+            {{ website.description|markdown }}
+
+          </div>
+          {% endfor %}
+        {% endblock %}
+	</div> <!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.wrap -->
+  {% include "footer.html" %}
+  </body>
+</html>

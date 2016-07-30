@@ -35,4 +35,32 @@ class Entry(models.Model):
         verbose_name_plural = "Blog Entries"
         ordering = ["-created"]
 
+class WebsiteQuerySet(models.QuerySet):
+    def published(self):
+        return self.filter(publish=True)
+
+class Website(models.Model):
+    title = models.CharField(max_length=200)
+    description = MarkdownField()
+    slug = models.SlugField(max_length=200, unique=True)
+    image = models.CharField(max_length=300)
+    link = models.CharField(max_length=200)
+    publish = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    objects = WebsiteQuerySet.as_manager()
+
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse("website_detail", kwargs={"slug": self.slug})
+  
+    class Meta:
+        verbose_name = "Website Entry"
+        verbose_name_plural = "Website Entries"
+        ordering = ["-created"]
+
+
 

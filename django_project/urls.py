@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, include, url
-
 from django.contrib import admin
+from django_markdown import flatpages
+
 admin.autodiscover()
+flatpages.register()
 
 urlpatterns = patterns('',
     # Examples:
