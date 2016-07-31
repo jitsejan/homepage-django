@@ -10,7 +10,7 @@
 
       <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-9 blog-main">
           {% block blog_entries %} {% endblock %}
 
           {% if is_paginated %}
@@ -21,10 +21,23 @@
           {% endif %}
         </div><!-- /.blog-main -->
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="col-sm-3 col-sm-offset-0 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset about-me">
-            <h4>About</h4>
-	    I am a software developer currently working for ASML Veldhoven. I have a passion for the field of big data, pattern recognition and ubiquitous computing. 
+            <div class="img-div">
+      <img src="{% static "images/JJ_avatar_01.jpg" %}" />
+    </div>
+            <p>
+	    I am a software developer currently working for ASML Veldhoven. I have a passion for the field of machine learning, 
+        pattern recognition and ubiquitous computing.
+            </p>
+<p> While I mainly work in Python, I try to experiment with different
+languages and frameworks when I can. I am using this page as a portfolio and showcase, but mainly as a cheatsheet. That's why
+you will mainly find shell commands or short scripts just for myself to not reinvent the wheel.
+            </p>
+            <p>
+        Currently this page is under heavy construction. I am busy switching my old page from PHP's CodeIgniter,
+via an experiment in Ruby on Rails, to Python's Django.
+            </p>
           </div>
         </div><!-- /.blog-sidebar -->
 

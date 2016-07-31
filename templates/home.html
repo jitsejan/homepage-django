@@ -4,8 +4,8 @@
 {% block blog_entries %}
 {% for object in object_list %}
   <div class="post">
-    <h2><a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a></h2>
-    {{ object.body|markdown }}
+    <h2>{{ object.title }}</h2>
+    {{ object.body|markdown}}
     <p class="meta">
       {{ object.created }} |
       Category {{  object.tags.all|join:", " }}

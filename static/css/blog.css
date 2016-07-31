@@ -17,10 +17,35 @@ body, html{
   color: #6699ff;
 }
 
+h2, a{
+    color: rgb(102, 153, 255);
+}
+
 .about-me {
   font-size: small;
   font-style: italic;
   text-align: justify;
+}
+.img-div{
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 50px auto;
+}
+
+
+.img-div img{
+transform: translate(-50%);
+-ms-transform:r translate(-50%); /* IE 9 */
+-moz-transform: translate(-50%); /* Firefox */
+-webkit-transform: translate(-50%); /* Safari and Chrome */
+-o-transform: translate(-50%); /* Opera */
+width: 150px;
+height: 150px;
+margin-left: 75px;
+margin-top: -5px;
+vertical-align: middle;
 }
 .web-img{
     vertical-align: text-top;
