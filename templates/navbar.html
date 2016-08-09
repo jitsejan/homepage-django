@@ -1,9 +1,15 @@
+<!--
+# History
+#
+# 2016-08-09 Add photo list item
+!-->
 {% load staticfiles %}
 {% load mytags %}
 
 {% url 'home_url' as home %}
 {% url 'projects_url' as projects %}
 {% url 'websites_url' as websites %}
+{% url 'photos_url' as photos %}
 {% url 'about_url' as about %}
 
 
@@ -30,6 +36,10 @@
                           </li>
                           <li class="{% active request websites %}">
                                 <a class="" href="{{ websites }}"><img class="" src="{% static "images/websites.gif" %}" alt="Websites" /></a>
+                                <img class="mario-img" src="{% static "images/Mario_stand_right.GIF" %}" alt="Mario stand right" />
+                          </li>
+                          <li class="{% active request photos %}">
+                                <a class="" href="{{ photos }}"><img class="" src="{% static "images/photos.gif" %}" alt="Photos" /></a>
                                 <img class="mario-img" src="{% static "images/Mario_stand_right.GIF" %}" alt="Mario stand right" />
                           </li>
                           <li class="{% active request about %}">

@@ -1,0 +1,35 @@
+<!--
+# History
+#
+# 2016-08-09 Inital version
+#
+!-->
+{%load django_markdown %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <title>Photos | JJ's World</title>
+  {% include "header.html" %}
+  <body>
+    <div id="wrap">
+    {% include "navbar.html" %}
+    <div class="container">
+      <strong>Temporary version. Rest will follow soon</strong>
+        <div class="row">
+        {% block photo_list %}
+          {% for photo in photo_list %}
+          <div class="project col-md-6 col-xs-12">
+            <h2>{{ photo.title }}</h2>
+            <center>
+            <img src="{{ photo.image }}"/>
+          </center>
+          Photosets: {{  photo.photosets.all|join:", " }}
+          </div>
+          {% endfor %}
+        {% endblock %}
+	</div> <!-- /.row -->
+    </div><!-- /.container -->
+  </div><!-- /.wrap -->
+  {% include "footer.html" %}
+  </body>
+</html>

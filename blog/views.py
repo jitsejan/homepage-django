@@ -1,5 +1,10 @@
+# History
+#
+# 2016-08-09 Add PhotoIndex
+
 from django.shortcuts import render
 from django.views import generic
+
 from . import models
 
 class BlogIndex(generic.ListView):
@@ -14,7 +19,11 @@ class BlogDetail(generic.DetailView):
 class WebsiteIndex(generic.ListView):
     queryset = models.Website.objects.published()
     template_name = "website.html"
-    
+
 class ProjectIndex(generic.ListView):
     queryset = models.Project.objects.published()
     template_name = "project.html"
+
+class PhotoIndex(generic.ListView):
+    queryset = models.Photo.objects.published()
+    template_name = "photo.html"

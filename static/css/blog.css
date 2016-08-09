@@ -20,6 +20,9 @@ body, html{
 h2, a{
     color: rgb(102, 153, 255);
 }
+.post{
+  margin-bottom: 50px;
+}
 
 .about-me {
   font-size: small;
@@ -27,8 +30,8 @@ h2, a{
   text-align: justify;
 }
 .img-div{
-    height: 150px;
-    width: 150px;
+    height: 140px;
+    width: 140px;
     overflow: hidden;
     border-radius: 50%;
     margin: 50px auto;
@@ -36,16 +39,16 @@ h2, a{
 
 
 .img-div img{
-transform: translate(-50%);
--ms-transform:r translate(-50%); /* IE 9 */
--moz-transform: translate(-50%); /* Firefox */
--webkit-transform: translate(-50%); /* Safari and Chrome */
--o-transform: translate(-50%); /* Opera */
-width: 150px;
-height: 150px;
-margin-left: 75px;
-margin-top: -5px;
-vertical-align: middle;
+  transform: translate(-50%);
+  -ms-transform:r translate(-50%); /* IE 9 */
+  -moz-transform: translate(-50%); /* Firefox */
+  -webkit-transform: translate(-50%); /* Safari and Chrome */
+  -o-transform: translate(-50%); /* Opera */
+  width: 140px;
+  height: 140px;
+  margin-left: 70px;
+  margin-top: 0px;
+  vertical-align: middle;
 }
 .web-img{
     vertical-align: text-top;
@@ -73,8 +76,8 @@ vertical-align: middle;
 .navbar-default .navbar-nav > li > a.active{
     background-color: white;
 }
-.navbar-default .navbar-nav>.active>a, 
-.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover{
     background-color: rgb(102,153,255);
 }
