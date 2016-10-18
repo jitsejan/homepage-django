@@ -25,5 +25,5 @@ class ProjectIndex(generic.ListView):
     template_name = "project.html"
 
 class PhotoIndex(generic.ListView):
-    queryset = models.Photo.objects.published()
+    queryset = models.Photoset.objects.all()
     template_name = "photo.html"

@@ -29,6 +29,7 @@ h2, a{
   font-style: italic;
   text-align: justify;
 }
+
 .img-div{
     height: 140px;
     width: 140px;
@@ -37,6 +38,9 @@ h2, a{
     margin: 50px auto;
 }
 
+p.meta{
+	font-size: x-small;
+}
 
 .img-div img{
   transform: translate(-50%);
@@ -121,6 +125,119 @@ h2, a{
 .navbar-default .navbar-toggle:hover{
    background-color: rgb(102,153,255);
 }
+
+
+
+
+#photos{
+	width: 100%;
+	margin: 0px auto;
+}
+#photos ul {
+  list-style-type: none;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+ 
+#photos li {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin: 1px;
+}
+
+#photos li{
+	width: 19.7%;
+  height: 187px;
+}
+ 
+#photos li:hover {
+  cursor: pointer;
+}
+
+#photos li img{
+	width: auto !important;
+	height: 100% !important;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+#photos li p {
+  color: transparent;
+  background: transparent;
+/*   font: 50 30px/187px 'Arvo', Helvetica, Arial, sans-serif; */
+  text-align: center;
+/*   text-transform: uppercase; */
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+  height: 100%; 
+ 
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+ 
+#photos li:hover p {
+  color: white;
+  background: #000; /*fallback for old browsers*/
+  background: rgba(0,0,0,0.7);
+}
+
+#photos li div{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+#photos li div.div-photoset{
+	background-color: rgb(50,50,50);
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 20px;
+	cursor: auto;
+}
+@media screen and (max-width: 1120px) {
+	#photos li{
+		width: 24%;
+		height: 154px;
+	}
+}
+ 
+@media screen and (max-width: 840px) {
+  #photos li{
+  	width: 32%;
+  	height: 150px;
+  }
+}
+ 
+@media screen and (max-width: 560px) {
+  #photos li {
+  	width: 49%;
+  	height: 150px;
+  }
+  
+}
+@media screen and (max-width: 400px) {
+	#photos li {
+		font-size: x-small;
+	  }
+}
+
 
 footer{
     margin-top: 150px;

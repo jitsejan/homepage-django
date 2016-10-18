@@ -37,7 +37,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SITE_ID = 5
+SITE_ID = 3
 
 # Application definition
 
@@ -48,10 +48,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_markdown',
-    'blog',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django_markdown',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,11 +74,11 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': 'nt4iqARZFi',
+        'NAME': 'django_db',
+        'USER': 'django_user',
+        'PASSWORD': 'Lyreco157',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5433',
     }
 }
 

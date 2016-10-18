@@ -95,31 +95,44 @@ class Project(models.Model):
         verbose_name_plural = "Project Entries"
         ordering = ["-created"]
 
-class PhotoQuerySet(models.QuerySet):
-    def published(self):
-        return self.filter(publish=True)
 
 class Photoset(models.Model):
-    slug = models.SlugField(max_length=200, unique=True)
-
-    def __str__(self):
-        return self.slug
-
-class Photo(models.Model):
-    title = models.CharField(max_length=200)
-    image = models.CharField(max_length=300)
-    publish = models.BooleanField(default=False)
+    flickr_id = models.CharField(max_length=50, default='No id')
+    secret = models.CharField(max_length=50, default='No secret')
+    title = models.CharField(max_length=200, default='No title')
+    description = models.CharField(max_length=300, default='No description')
+    date_create = models.DateTimeField(auto_now_add=True, blank=True)
+    date_update = models.DateTimeField(auto_now_add=True, blank=True)
+    
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-
-    photosets = models.ManyToManyField(Photoset)
-
-    objects = PhotoQuerySet.as_manager()
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = "Photo Entry"
-        verbose_name_plural = "Photo Entries"
+        verbose_name = "Photoset"
+        verbose_name_plural = "Photosets"
+        ordering = ["date_update"]
+
+class Photo(models.Model):
+    flickr_id = models.CharField(max_length=50, default='No id')
+    title = models.CharField(max_length=200, default='No title')
+    description = models.CharField(max_length=300, default='No description')
+    date_posted = models.DateTimeField(auto_now_add=True, blank=True)
+    date_taken = models.DateTimeField(auto_now_add=True, blank=True)
+    url = models.CharField(max_length=300)
+    image_url = models.CharField(max_length=300)
+
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    photoset = models.ForeignKey('Photoset', null=False, on_delete=models.CASCADE, related_name='photos')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Photo"
+        verbose_name_plural = "Photos"
         ordering = ["-created"]
