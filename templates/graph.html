@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <title>Graphs | JJ's World</title>
+  {% include "header.html" %}
+  <body>
+    <div id="wrap">
+    {% include "navbar.html" %}
+    <div class="container">
+        {% if graph %}
+        <div style="width:1024;height:600">
+        {{ graph|safe }}
+        </div>
+        {% endif %}      
+    </div><!-- /.container -->
+  </div><!-- /.wrap -->
+  {% include "footer.html" %}
+  </body>
+</html>
