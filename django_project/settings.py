@@ -50,7 +50,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    # Third party
     'django_markdown',
+    'analytical',
+    # Apps
     'blog',
 )
 
@@ -100,3 +103,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-86650752-1'
+GOOGLE_ANALYTICS_DOMAIN = 'www.jitsejan.com'

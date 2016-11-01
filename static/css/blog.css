@@ -20,6 +20,9 @@ body, html{
 h2, a{
     color: rgb(102, 153, 255);
 }
+a:hover{
+    text-decoration: none;
+}
 .post{
   margin-bottom: 50px;
 }

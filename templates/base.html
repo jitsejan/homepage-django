@@ -1,8 +1,10 @@
 {% load staticfiles %}
+{% load analytical %}
 <!DOCTYPE html>
 <html lang="en">
    {% include "header.html" %}
   <body>
+    {% analytical_body_top %}
     <div id="wrap">
     {% include "navbar.html" %}
     <div class="container">
@@ -37,5 +39,6 @@
     </div><!-- /.container -->
   </div><!-- /.wrap !-->
   {% include "footer.html" %}
+  {% analytical_body_bottom %}
   </body>
 </html>
