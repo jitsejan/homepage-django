@@ -5,6 +5,10 @@ from django.db.models import TextField
 from . import models
 
 class EntryAdmin(admin.ModelAdmin):
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', # jquery
+        )
     list_display = ("title", "created")
     prepopulated_fields = {"slug": ("title",)}
     formfield_overrides = {TextField: {'widget': AdminMarkdownWidget}}

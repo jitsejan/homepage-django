@@ -1,13 +1,17 @@
 {% extends "base.html" %}
-{% load django_markdown %}
-
+{% load markdownify %}
 {% block blog_entries %}
-  <div class="post">
+<div class="row">
+    <a href="{% url 'home_url' %}">Go back</a>
+</div>
+<div class="row">
+    <div class="post">
     <h2>{{ object.title }}</h2>
-    {{ object.body|markdown }}
+    {{ object.body | markdown | safe}}
     <p class="meta">
       {{ object.created }} |
-      Tagged under {{  object.tags.all|join:", " }}
+      Category {{  object.tags.all|join:", " }}
     </p>
   </div>
+</div>
 {% endblock %}
