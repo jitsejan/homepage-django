@@ -45,6 +45,20 @@ p.meta{
 	font-size: x-small;
 }
 
+
+.btncls{
+    margin: 2px;
+    background-color:rgb(102,153,255);
+    border: #2e6da4;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 4px 4px;
+    font-weight: normal;
+    border-radius: 4px;
+    line-height: 1.5;
+    text-decoration:none
+}
+
 .img-div img{
   transform: translate(-50%);
   -ms-transform:r translate(-50%); /* IE 9 */

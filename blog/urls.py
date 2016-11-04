@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^projects', views.ProjectIndex.as_view(), name="projects_url"),
     url(r'^photos', views.PhotoIndex.as_view(), name="photos_url"),
     url(r'^graphs', views.Graph.as_view(), name="graph"),
+    url(r'^search/', views.search, name="search_url"),
     url(r'^(?P<slug>\S+)$', views.BlogDetail.as_view(), name="entry_detail"),
     url(r'^$', views.BlogIndex.as_view(), name="home_url"),
 ]

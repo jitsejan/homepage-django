@@ -2,6 +2,10 @@
 #
 # 2016-08-09 Add PhotoIndex
 
+# System imports
+import operator
+from django.db.models import Q
+
 from django.shortcuts import render
 from django.views import generic
 
@@ -88,3 +92,21 @@ class Graph(generic.TemplateView):
         context['graph'] = div
 
         return context
+        
+def search(request):
+    query_string = ''
+    found_entries = None
+    if ('q' in request.GET) and request.GET['q'].strip():
+        queryset = models.Entry.objects.order_by('-created')
+        query = request.GET['q']
+        query_list = query.split()
+        queryset = queryset.filter(
+            reduce(operator.and_,
+                   (Q(title__icontains=q) for q in query_list)) |
+            reduce(operator.and_,
+                   (Q(body__icontains=q) for q in query_list))
+        )
+        return render(request, 'search.html', { 'query_string': query, 'posts': queryset })
+    else:
+        return render(request, 'search.html', { 'query_string': 'Null', 'found_entries': 'Enter a search term' })
+        
