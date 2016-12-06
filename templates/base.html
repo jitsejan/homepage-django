@@ -8,12 +8,7 @@
     <div id="wrap">
     {% include "navbar.html" %}
     <div class="container">
-        <div class="row searchdiv hidden-lg hidden-md hidden-sm">
-            <form id="searchform" action="{% url 'search_url' %}" method="get">
-                <input type="text" name="q" type="text"/>
-                <button type="button" onclick="searchform.submit()" class="btncls">Search</button>
-            </form>
-        </div><!-- /.row -->
+        <div class="row searchdiv hidden-lg hidden-md hidden-sm">{% include "searchform.html" %}</div><!-- /.row -->
         <div class="row">
         <div class="col-sm-9 blog-main">
           {% block blog_entries %} {% endblock %}
@@ -26,17 +21,10 @@
         </div><!-- /.blog-main -->
         <div class="col-sm-3 col-sm-offset-0 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset about-me">
-            <div class="row searchdiv hidden-xs">
-                <form id="searchform" action="{% url 'search_url' %}" method="get">
-                    <input type="text" name="q" type="text"/>
-                    <button type="button" onclick="searchform.submit()" class="btncls">Search</button>
-                </form>
-            </div><!-- /.row -->
-            <div class="img-div">
-              <img src="{% static "images/JJ_Montreal.png" %}" />
-            </div>
+            <div class="row searchdiv hidden-xs">{% include "searchform.html" %}</div><!-- /.row -->
+            <div class="img-div"><img src="{% static "images/JJ_Montreal.png" %}" /></div>
             <p>
-	           I am a software developer currently working for ASML Veldhoven. I have a passion for the field of machine learning,
+	           I am a Data Scientist currently working for Itility BV. I have a passion for the field of machine learning,
                pattern recognition, big data and ubiquitous computing.
             </p>
             <p>

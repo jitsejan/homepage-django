@@ -21,6 +21,7 @@ class Tag(models.Model):
 class Entry(models.Model):
     title = models.CharField(max_length=200)
     body = MarkdownField()
+    description = MarkdownField(default="")
     slug = models.SlugField(max_length=200, unique=True)
     publish = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)

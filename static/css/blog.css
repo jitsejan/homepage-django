@@ -23,6 +23,19 @@ h2, a{
 a:hover{
     text-decoration: none;
 }
+
+input[type=submit] {
+    -webkit-border-radius:0px;
+    margin: 20px;
+}
+
+form{
+   margin: 10px;
+}
+input{
+    -webkit-appearance: none;
+}
+
 .post{
   margin-bottom: 50px;
 }
