@@ -13,6 +13,5 @@ urlpatterns = [
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^', include('blog.urls')),
     #url(r'^about$', 'flatpage', {'url': '/about/'}, name='about_url'),
-    url(r'^about/$', views.flatpage, {'url': '/about/'}, name='about_url'),
 #    url(r'^pages/', include('django.contrib.flatpages.urls')),
 ]

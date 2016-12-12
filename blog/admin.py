@@ -13,6 +13,7 @@ class EntryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     formfield_overrides = {TextField: {'widget': AdminMarkdownWidget}}
 
+
 admin.site.register(models.Entry, EntryAdmin)
 admin.site.register(models.Tag)
 admin.site.register(models.Project)

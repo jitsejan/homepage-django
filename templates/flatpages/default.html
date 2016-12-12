@@ -1,4 +1,4 @@
-{%load django_markdown %}
+{% load markdownify %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +9,10 @@
     {% include "navbar.html" %}
 
     <div class="container">
-
-		<div class="row">
-<div class="col-xs-12 col-offset-xs-0">{{ flatpage.content|markdown }}</div>
-		</div> <!-- /.row -->
+	<h1>{{ flatpage.title  }}</h1>
+	<div class="row">
+		<div class="col-xs-12 col-offset-xs-0">{{ flatpage.content | markdown | safe}}</div>
+	</div> <!-- /.row -->
         
 
     </div><!-- /.container -->
