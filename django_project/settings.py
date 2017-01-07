@@ -13,8 +13,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
 MARKDOWN_EDITOR_SKIN = 'simple'
 MARKDOWN_EXTENSIONS = ['extra']
@@ -123,3 +123,6 @@ STATIC_URL = '/static/'
 
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-86650752-1'
 GOOGLE_ANALYTICS_DOMAIN = 'www.jitsejan.com'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

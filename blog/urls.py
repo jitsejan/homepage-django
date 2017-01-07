@@ -20,3 +20,4 @@ urlpatterns = [
     #url(r'^about$', 'flatpage', {'url': '/about/'}, name='about_url'),
     url(r'^$', views.BlogIndex.as_view(), name="home_url"),
 ]
+

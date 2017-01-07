@@ -137,3 +137,8 @@ class Photo(models.Model):
         verbose_name = "Photo"
         verbose_name_plural = "Photos"
         ordering = ["-created"]
+
+class ImageFile(models.Model):
+    description = models.CharField(max_length=255, blank=True)
+    imagefile = models.ImageField(upload_to='images')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
