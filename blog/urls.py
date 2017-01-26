@@ -4,6 +4,7 @@
 
 from django.views.generic import RedirectView
 from django.conf.urls import include, url
+from django.contrib.flatpages.views import flatpage
 from . import views, feed
 
 urlpatterns = [
@@ -13,6 +14,12 @@ urlpatterns = [
     url(r'^photos', views.PhotoIndex.as_view(), name="photos_url"),
     url(r'^graphs', views.Graph.as_view(), name="graph"),
     url(r'^search/', views.search, name="search_url"),
+    url(r'^latex/$', flatpage, {'url': '/latex/'}, name='latex_url'),
+    url(r'^pandas/$', flatpage, {'url': '/pandas/'}, name='pandas_url'),
+    url(r'^python/$', flatpage, {'url': '/python/'}, name='python_url'),
+    url(r'^splunk/$', flatpage, {'url': '/splunk/'}, name='splunk_url'),
     url(r'^(?P<slug>\S+)$', views.BlogDetail.as_view(), name="entry_detail"),
+    #url(r'^about$', 'flatpage', {'url': '/about/'}, name='about_url'),
     url(r'^$', views.BlogIndex.as_view(), name="home_url"),
 ]
+

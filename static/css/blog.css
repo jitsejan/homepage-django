@@ -157,7 +157,9 @@ p.meta{
 }
 
 
-
+table.dataframe th, table.dataframe td{
+  padding: 10px;
+}
 
 #photos{
 	width: 100%;
@@ -277,4 +279,10 @@ footer{
     background-image: url('../images/Bottom.GIF');
     background-repeat: repeat-x;
     background-position: bottom;
+}
+
+pre{
+  background-color: #272822;
+  color: #f8f8f2;
+  border-radius: 0px;
 }

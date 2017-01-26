@@ -11,19 +11,38 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
+#TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
 MARKDOWN_EDITOR_SKIN = 'simple'
 MARKDOWN_EXTENSIONS = ['extra']
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.request',
-)
+#TEMPLATE_CONTEXT_PROCESSORS = (
+#    'django.contrib.auth.context_processors.auth',
+#    'django.core.context_processors.request',
+#)
 
+DEBUG = True
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'debug': DEBUG,
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+  #              'django.core.context_processors.request',
+            ],
+        },
+    },
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -31,13 +50,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 SECRET_KEY = 'f8eVNNkcUVdkQq6qyB2UutqdN3lD71ckFYRKljYDkcjnGwy7GG'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-TEMPLATE_DEBUG = True
+ALLOWED_HOSTS = ['192.210.204.101', '127.0.0.1']
 
-ALLOWED_HOSTS = []
-
-SITE_ID = 3
+SITE_ID = 4
 
 # Application definition
 
@@ -64,6 +80,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#    'django.contrib.flatpages.middleware.FlatpageFallbackmiddleware',
 )
 
 ROOT_URLCONF = 'django_project.urls'
@@ -106,3 +123,6 @@ STATIC_URL = '/static/'
 
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-86650752-1'
 GOOGLE_ANALYTICS_DOMAIN = 'www.jitsejan.com'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
