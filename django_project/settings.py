@@ -53,7 +53,7 @@ SECRET_KEY = 'f8eVNNkcUVdkQq6qyB2UutqdN3lD71ckFYRKljYDkcjnGwy7GG'
 
 ALLOWED_HOSTS = ['192.210.204.101', '127.0.0.1']
 
-SITE_ID = 4
+SITE_ID = 3
 
 # Application definition
 
